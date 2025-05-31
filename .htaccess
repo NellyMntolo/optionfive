@@ -1,0 +1,118 @@
+ 					
+AddDefaultCharset utf-8
+
+#ErrorDocument 404 /error.php
+
+
+RewriteEngine on
+#Multi Language index show default language
+RewriteRule ^(/)?$ Index [NC,L]
+
+#Front-End
+RewriteRule ^Index/?$ /index.html [NC,L]
+RewriteRule ^Home/?$ /themes/thinktheme/views/site/index.php [NC,L]
+RewriteRule ^HowTo/?$ /themes/thinktheme/views/site/Views/howto.php [NC,L]
+RewriteRule ^About/?$ /themes/thinktheme/views/site/Views/about.php [NC,L]
+RewriteRule ^Contact/?$ /themes/thinktheme/views/site/Views/contact.php [NC,L]
+RewriteRule ^Products/?$ /themes/thinktheme/views/site/Views/products.php [NC,L]
+RewriteRule ^Retailers/?$ /themes/thinktheme/views/site/Views/retailers.php [NC,L]
+
+
+
+
+RewriteRule ^we_are/?$ /themes/thinktheme/views/site/Views/WeAre2.php [NC,L]
+RewriteRule ^we_create/?$ /themes/thinktheme/views/site/Views/WeCreate.php [NC,L]
+RewriteRule ^we_think/?$ /themes/thinktheme/views/site/Views/WeThink.php [NC,L]
+RewriteRule ^we_do/?$ /themes/thinktheme/views/site/Views/WeDo.php [NC,L]
+#RewriteRule ^we_create/projects/?$ /themes/thinktheme/views/site/Views/Project.php [NC,L]
+
+
+
+
+
+#Vanity GET URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^we_create/projects/(.*)?$ /themes/thinktheme/views/site/Views/Project.php?project_id=$1 [NC,L]
+RewriteRule ^we_think/Articles/(.*)?$ /themes/thinktheme/views/site/Views/BlogPage.php?blog_id=$1 [NC,L]
+
+RewriteRule ^Contact_Success/?$ /themes/thinktheme/views/site/Controller/contact_controller.php [NC,L]
+RewriteRule ^Retailer_Success/?$ /themes/thinktheme/views/site/Controller/retailer_controller.php [NC,L]
+RewriteRule ^fetch_en/?$ /themes/thinktheme/views/site/Controller/fetch_en.php [NC,L]
+RewriteRule ^fetch_zh/?$ /themes/thinktheme/views/site/Controller/fetch_zh.php [NC,L]
+RewriteRule ^getcategory/?$ /themes/thinktheme/views/site/Controller/categories.php [NC,L]
+RewriteRule ^getcategoryzh/?$ /themes/thinktheme/views/site/Controller/categorieszh.php [NC,L]
+RewriteRule ^gettag/?$ /themes/thinktheme/views/site/Controller/tags.php [NC,L]
+RewriteRule ^gettagzh/?$ /themes/thinktheme/views/site/Controller/tagszh.php [NC,L]
+RewriteRule ^CheckProject/?$ /themes/thinktheme/views/site/Controller/project_controller.php [NC,L]
+RewriteRule ^CheckArticle/?$ /themes/thinktheme/views/site/Controller/blog_controller.php [NC,L]
+
+#Back-end
+RewriteRule ^Admin/?$ /themes/thinktheme/views/site/Admin/login.php [NC,L]
+RewriteRule ^Admin/Logout/?$ /themes/thinktheme/views/site/Admin/logout.php [NC,L]
+RewriteRule ^Admin/Home/?$ /themes/thinktheme/views/site/Admin/index.php [NC,L]
+RewriteRule ^Admin/Main/?$ /themes/thinktheme/views/site/Admin/Views/Main.php [NC,L]
+RewriteRule ^Admin/HowTo/?$ /themes/thinktheme/views/site/Admin/Views/HowTo.php [NC,L]
+RewriteRule ^Admin/Contact/?$ /themes/thinktheme/views/site/Admin/Views/Contact.php [NC,L]
+RewriteRule ^Admin/About/?$ /themes/thinktheme/views/site/Admin/Views/About.php [NC,L]
+RewriteRule ^Admin/Retailers/?$ /themes/thinktheme/views/site/Admin/Views/Retailers.php [NC,L]
+RewriteRule ^Admin/Products/?$ /themes/thinktheme/views/site/Admin/Views/Products.php [NC,L]
+RewriteRule ^Admin/Menu/?$ /themes/thinktheme/views/site/Admin/Views/Menu.php [NC,L]
+RewriteRule ^Admin/Footer/?$ /themes/thinktheme/views/site/Admin/Views/Footer.php [NC,L]
+RewriteRule ^Admin/Profile/?$ /themes/thinktheme/views/site/Admin/Views/Profile.php [NC,L]
+
+
+RewriteRule ^Admin/ProjectCreate/?$ /themes/thinktheme/views/site/Admin/Views/CreateProject.php [NC,L]
+RewriteRule ^Admin/ProjectEdit/?$ /themes/thinktheme/views/site/Admin/Views/EditProject.php [NC,L]
+RewriteRule ^Admin/AddNewThinker/?$ /themes/thinktheme/views/site/Admin/Views/AddThinker.php [NC,L]
+RewriteRule ^Admin/AddNewPartner/?$ /themes/thinktheme/views/site/Admin/Views/AddPartner.php [NC,L]
+RewriteRule ^Admin/ViewAllProjects/?$ /themes/thinktheme/views/site/Admin/Views/AllProjects.php [NC,L]
+RewriteRule ^Admin/ViewAllBlogs/?$ /themes/thinktheme/views/site/Admin/Views/AllBlogs.php [NC,L]
+RewriteRule ^Admin/ViewAllThinkers/?$ /themes/thinktheme/views/site/Admin/Views/AllThinkers.php [NC,L]
+RewriteRule ^Admin/ViewAllPartners/?$ /themes/thinktheme/views/site/Admin/Views/AllPartners.php [NC,L]
+RewriteRule ^Admin/BlogCreate/?$ /themes/thinktheme/views/site/Admin/Views/CreateBlog.php [NC,L]
+RewriteRule ^Admin/BlogEdit/?$ /themes/thinktheme/views/site/Admin/Views/EditBlog.php [NC,L]
+RewriteRule ^Admin/Partners/?$ /themes/thinktheme/views/site/Admin/Views/Partners.php [NC,L]
+RewriteRule ^Admin/ThinkerEdit/?$ /themes/thinktheme/views/site/Admin/Views/EditThinker.php [NC,L]
+RewriteRule ^Admin/PartnerEdit/?$ /themes/thinktheme/views/site/Admin/Views/EditPartner.php [NC,L]
+RewriteRule ^Admin/ProjectCategories/?$ /themes/thinktheme/views/site/Admin/Views/Categories.php [NC,L]
+RewriteRule ^Admin/BlogTags/?$ /themes/thinktheme/views/site/Admin/Views/Tags.php [NC,L]
+RewriteRule ^fetch_category/?$ /themes/thinktheme/views/site/Admin/Controller/editcategory.php [NC,L]
+RewriteRule ^fetch_tag/?$ /themes/thinktheme/views/site/Admin/Controller/edittag.php [NC,L]
+
+RewriteRule ^Admin/AllMain/?$ /themes/thinktheme/views/site/Admin/Controller/main_controller.php [NC,L]
+RewriteRule ^Admin/AllAbout/?$ /themes/thinktheme/views/site/Admin/Controller/weare_controller.php [NC,L]
+RewriteRule ^Admin/AllWeDo/?$ /themes/thinktheme/views/site/Admin/Controller/wedo_controller.php [NC,L]
+RewriteRule ^Admin/AllWeThink/?$ /themes/thinktheme/views/site/Admin/Controller/wethink_controller.php [NC,L]
+RewriteRule ^Admin/AllProducts/?$ /themes/thinktheme/views/site/Admin/Controller/products_controller.php [NC,L]
+RewriteRule ^Admin/AllRetailers/?$ /themes/thinktheme/views/site/Admin/Controller/retailers_controller.php [NC,L]
+RewriteRule ^Admin/AllProjects/?$ /themes/thinktheme/views/site/Admin/Controller/project_controller.php [NC,L]
+RewriteRule ^Admin/AllWeEdit/?$ /themes/thinktheme/views/site/Admin/Controller/project_controller.php [NC,L]
+RewriteRule ^Admin/AllFooter/?$ /themes/thinktheme/views/site/Admin/Controller/footer_controller.php [NC,L]
+RewriteRule ^Admin/AllMenu/?$ /themes/thinktheme/views/site/Admin/Controller/menu_controller.php [NC,L] 
+RewriteRule ^Admin/AllHowTo/?$ /themes/thinktheme/views/site/Admin/Controller/main_project_controller.php [NC,L] 
+RewriteRule ^Admin/AllContact/?$ /themes/thinktheme/views/site/Admin/Controller/contact_controller.php [NC,L]
+RewriteRule ^Admin/AllTheThinkers/?$ /themes/thinktheme/views/site/Admin/Controller/thethinkers_controller.php [NC,L]
+RewriteRule ^Admin/AllThePartners/?$ /themes/thinktheme/views/site/Admin/Controller/thepartners_controller.php [NC,L]
+RewriteRule ^Admin/AllBlogs/?$ /themes/thinktheme/views/site/Admin/Controller/blog_controller.php [NC,L]
+RewriteRule ^Admin/AllCategories/?$ /themes/thinktheme/views/site/Admin/Controller/category_controller.php [NC,L]
+RewriteRule ^Admin/AllTags/?$ /themes/thinktheme/views/site/Admin/Controller/tag_controller.php [NC,L]
+RewriteRule ^Admin/AllProfile/?$ /themes/thinktheme/views/site/Admin/Controller/profile_controller.php [NC,L]
+RewriteRule ^Admin/Sort/?$ /themes/thinktheme/views/site/Admin/Controller/sort_project_controller.php [NC,L]
+RewriteRule ^Admin/BlogSort/?$ /themes/thinktheme/views/site/Admin/Controller/sort_blog_controller.php [NC,L]
+RewriteRule ^Admin/BlogSortDefault/?$ /themes/thinktheme/views/site/Admin/Controller/sort_blog_default_controller.php [NC,L]
+RewriteRule ^Admin/ProjectSortDefault/?$ /themes/thinktheme/views/site/Admin/Controller/sort_project_default_controller.php [NC,L]
+
+
+#Add/Remove Categories "project edit"
+RewriteRule ^Admin/AddCategory/?$ /themes/thinktheme/views/site/Admin/Controller/project_addcategory_controller.php [NC,L]
+RewriteRule ^Admin/RemoveCategory/?$ /themes/thinktheme/views/site/Admin/Controller/project_removecategory_controller.php [NC,L]
+RewriteRule ^Admin/AddTag/?$ /themes/thinktheme/views/site/Admin/Controller/blog_addtag_controller.php [NC,L]
+RewriteRule ^Admin/RemoveTag/?$ /themes/thinktheme/views/site/Admin/Controller/blog_removetag_controller.php [NC,L]
+
+
+
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule . index.php
