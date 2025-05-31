@@ -1,10 +1,10 @@
 <?php
 		$dbhost = 'localhost';
 
-	   	$dbuser = 'optionfive'; 
-	   	$dbpass = 'option5';
+	   	$dbuser = ''; 
+	   	$dbpass = '';
 	   	$conn = mysql_connect($dbhost, $dbuser, $dbpass);
-	   	mysql_select_db('optionfive');
+	   	mysql_select_db('');
 	   	mysql_set_charset("utf8");
 	   	mysql_query("SET NAMES 'utf8'");	
 	   	mysql_query("SET CHARACTER SET utf8", $conn); 
